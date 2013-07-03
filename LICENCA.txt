@@ -1,0 +1,8 @@
+Este projeto foi desenvolvido para facilitar a preparação 
+e manutenção de PUDs (Planos de Unidade Didática) e PPCs (Projetos Pedagógicos) dos
+cursos do Eito Tecnológico da Indústria, Instituto Federal do Ceará, Campus Maracanaú.
+
+A versão original foi desenvolvida por Prof. Geraldo L B Ramalho, gramalho@ifce.edu.br.
+
+O uso dos scripts e templates é livre e sugestões de melhoria são bem vindas.
+Pede-se apenas que as melhorias sejam compartilhadas neste projeto.

@@ -1,0 +1,213 @@
+%
+% IFCE - Campus MAracanaú
+% MODELO PUD PARA LATEX
+% Este estilo possui todos os pacotes e formatação necessária para uso com o PUD_UTF8.TEX
+%
+% v2 Geraldo Ramalho abr/2013
+%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage[top=1in, bottom=2.5in, left=0.9in, right=0.9in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkbordercolor=red,linkcolor=blue,pdfborderstyle={/S/U/W 1}}
+\usepackage[portuguese]{babel}
+\usepackage{datetime}
+
+\pdfinfo{
+   /Author (Eixo da Indústria, IFCE Maracanaú)
+   /Title (Cursos de Engenharia)
+   /Creator (pdfLaTeX)
+   /CreationDate (D:20130511103300)
+   /Subject (PUD dos cursos de Engenharia e relatórios de pendências)
+   /Keywords (image processing; structural analysis; mathematical morphology; cooccurrence statistics)
+   /ModDate (D:\pdfdate)
+}
+
+\newcounter{rowno}
+\setcounter{rowno}{0}
+
+\def\cinza{gray!50}
+
+%AMBIENTE CONTEUDO
+\newenvironment{conteudo}% 
+{\begin{enumerate}[{\textbf{Unidade}}~1~-]
+}% 
+{% end code
+\end{enumerate}
+}
+
+%*** GRAPHICS RELATED PACKAGES ***
+\graphicspath{{figuras/}} 
+\DeclareGraphicsExtensions{.eps,.png,.jpg,.bmp}
+
+\def\PUDcorpo{
+%! PUD_CORPO.TEX
+%
+% Geraldo Ramalho abr/2013
+%
+\pagestyle{fancy}
+\headheight = 100pt
+\headsep = 0pt
+%\textwidth = 490pt
+%\textheight = 602pt
+\footskip = 33pt
+\renewcommand{\footrulewidth}{0.4pt}
+%! CABEÇALHO ORIGINAL
+%\fancyhead[CO,CE]{
+%\includegraphics[width=4cm]{pud_logo_ifce.jpg}\\
+%\footnotesize{MINISTÉRIO DA EDUCAÇÃO\\
+%SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA\\
+%INSTITUTO FEDERAL DO CEARÁ – CAMPUS MARACANAÚ\\
+%DIRETORIA DE ENSINO\\
+%COORDENAÇÃO DO CURSO DE ENGENHARIA CONTROLE E AUTOMAÇÃO}
+%}
+%! CABEÇALHO NOVO1
+%\fancyhead[CO,CE]{
+%\setlength{\extrarowheight}{-3pt}
+%\begin{tabular}{p{2.5cm}c}
+%\multirow{6}{*}{\includegraphics[width=2.5cm]{pud_logo_ifce_simples.png}}&
+%\scriptsize{MINISTÉRIO DA EDUCAÇÃO}\\
+%&\scriptsize{SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA}\\
+%&\scriptsize{INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO CEARÁ}\\
+%&\scriptsize{CAMPUS MARACANAÚ}\\
+%%&\\
+%&\scriptsize{DIRETORIA DE ENSINO}\\
+%&\scriptsize{EIXO TECNOLÓGICO DA INDÚSTRIA}
+%&\footnotesize{COORDENAÇÃO DO CURSO DE ENGENHARIA CONTROLE E AUTOMAÇÃO}
+%\end{tabular}
+%}
+%! CABEÇALHO NOVO2
+\fancyhead[CO,CE]{
+\setlength{\extrarowheight}{-0pt}
+\begin{tabular}{p{6cm}l}
+\multirow{4}{*}{\includegraphics[height=2cm]{pud_logo_ifce.jpg}}&\scriptsize{MINISTÉRIO DA EDUCAÇÃO}\\
+&\scriptsize{SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA}\\
+%&\\
+&\scriptsize{DIRETORIA DE ENSINO}\\
+&\scriptsize{EIXO TECNOLÓGICO DA INDÚSTRIA}
+%&\footnotesize{COORDENAÇÃO DO CURSO DE ENGENHARIA CONTROLE E AUTOMAÇÃO}
+\end{tabular}
+}
+%!RODAPÉ ORIGINAL
+%\fancyfoot[CO,CE]{
+%\footnotesize{%Coordenação do Curso de Engenharia de Controle e Automação / IFCE – Campus Maracanaú\\
+%Av. Parque Central, S/N -- Distrito Industrial I -- 61925-315 -- Maracanaú, CE, Brasil\\
+%Fone: (85) 3878-6316\\                            
+%Elaboração: \PUDautor~ -- ~Data: \PUDdata\\
+%\ifx\PUDrevisao\undefined
+%\else
+%Revisão: \PUDrevisao~ -- ~Responsável: \PUDrevisor~  -- ~Data: \PUDdatarevisao
+%\fi}}
+%!RODAPÉ NOVO
+\fancyfoot[CO,CE]{
+\footnotesize{
+\begin{tabular}{|p{7.8cm}|p{7.76cm}|} \hline
+Elaboração: \PUDautor & \ifx\PUDrevisao\undefined
+\else
+Revisão: \PUDrevisao~ -- ~Data: \PUDdatarevisao
+\fi \\
+Data: \PUDdata & 
+\ifx\PUDrevisao\undefined
+\else
+Responsável: \PUDrevisor
+\fi
+\\ \hline
+\end{tabular}\\
+Coordenadoria do Curso de Engenharia de Controle e Automação -- Fone: (85) 3878-6316\\
+Av. Parque Central, S/N -- Distrito Industrial I -- 61925-315 -- Maracanaú, CE, Brasil\\                           
+}}
+%
+\renewcommand*\arraystretch{1.1}
+%\fancyfoot[RO, LE] {\thepage}
+%!CURSO
+\begin{longtable}{|p{16cm}|}
+%\hline 
+\cellcolor{\cinza}Curso\label{PUD:\PUDcodigo}\\ \hline
+\PUDcurso\\ \hline%x
+\end{longtable}\vspace{-24pt}
+%!DISCIPLINA
+\begin{longtable}{|p{16cm}|}
+%\hline 
+\cellcolor{\cinza}Disciplina\\ \hline
+\hyperref[MATRIZ]{\PUDdisciplina~(\PUDcodigo)}\\\hline%x
+\end{longtable}\vspace{-24pt}
+%!CARGA HORARIA
+\begin{longtable}{|p{5.05cm}|p{5.05cm}|p{5.03cm}|}
+%\hline 
+\cellcolor{\cinza}Carga Horária& \cellcolor{\cinza}Créditos & \cellcolor{\cinza}Semestre\\ \hline
+\PUDhoras~horas/aula&\PUDcreditos&
+\ifx \PUDsemestre\undefined
+Optativa
+\else
+\PUDsemestre
+\fi\\
+\end{longtable}\vspace{-24pt}
+%!PRE-REQUISITOS
+\begin{longtable}{|p{16cm}|}
+\hline \cellcolor{\cinza}Pré-Requisitos\\ \hline
+\ifx \PUDprerequisito\undefined
+---
+\else
+\PUDprerequisito
+\fi\\\hline%x
+\end{longtable}\vspace{-24pt}
+%!EMENTA
+\begin{longtable}{|p{16cm}|}
+%\hline 
+\cellcolor{\cinza}Ementa\\ \hline
+\PUDementa\\\hline%x
+\end{longtable}\vspace{-24pt}
+%!OBJETIVOS
+\begin{longtable}{|p{16cm}|}
+%\hline 
+\cellcolor{\cinza}Objetivos\\ \hline
+\PUDobjetivos\\\hline%x
+\end{longtable}\vspace{-24pt}
+%!CONTEUDO
+\begin{longtable}{|p{16cm}|}
+%\hline 
+\cellcolor{\cinza}Conteúdo\\ \hline
+\end{longtable}\vspace{-24pt}
+%
+\setcounter{rowno}{0}
+\begin{longtable}{|>{\stepcounter{rowno}\hfill Unidade \therowno~--~}p{2.4cm}p{13.18cm}|}
+\PUDconteudo
+\end{longtable}\vspace{-24pt}
+%!BIBLIOGRAFIA
+\setcounter{rowno}{0}
+\begin{longtable}{|p{16cm}|}
+\\
+\hline 
+\cellcolor{\cinza}Bibliografia\\ 
+\hline
+\\
+\underline{Básica}\\
+\end{longtable}\vspace{-24pt}
+%
+\begin{longtable}{|>{\stepcounter{rowno}\therowno~--~}p{0.3cm}p{15.28cm}|}
+\PUDbibbasica
+\end{longtable}\vspace{-24pt}
+%
+\begin{longtable}{|p{16cm}|}
+\\
+\underline{Complementar}\\
+\end{longtable}\vspace{-24pt}
+%
+\setcounter{rowno}{0}
+\begin{longtable}{|>{\stepcounter{rowno}\therowno~--~}p{0.3cm}p{15.28cm}|}
+\PUDbibcomplementar\\
+\hline
+\end{longtable}%\vspace{-24pt}
+%\begin{longtable}{|p{16cm}|}
+%\hline 
+%\end{longtable}
+}%PUDcorpo
